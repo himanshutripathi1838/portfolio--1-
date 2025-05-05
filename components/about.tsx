@@ -25,17 +25,15 @@ export default function About() {
   }, [])
 
   const skills = [
-    "JavaScript",
-    "TypeScript",
-    "React",
-    "Next.js",
-    "Node.js",
-    "Express",
+    "C",
+    "C++",
+    "DSA",
+    "Bootstrap",
+    "Tailwind",
     "MongoDB",
-    "PostgreSQL",
-    "Tailwind CSS",
-    "Figma",
-    "UI/UX Design",
+    "HTML",
+    "CSS",
+    "JavaScript",
     "Git",
   ]
 
@@ -61,10 +59,9 @@ export default function About() {
   return (
     <div className="container mx-auto">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
-        viewport={{ once: true }}
       >
         <h2 className="text-3xl font-bold mb-2 text-center">About Me</h2>
         <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mb-10 rounded-full"></div>
@@ -72,30 +69,28 @@ export default function About() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          viewport={{ once: true }}
           className="relative aspect-square max-w-md mx-auto"
         >
           <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 opacity-20 blur-2xl" />
           <div className="relative h-full w-full overflow-hidden rounded-full border-4 border-border">
-          <Image
-  src="https://i.ibb.co/9k5nVzbB/1711783991558.jpg"
-  alt="Profile"
-  width={400}
-  height={400}
-  className="object-cover"
-/>
+                          <Image
+                            src="https://i.ibb.co/9k5nVzbB/1711783991558.jpg"
+                            width={180}
+                            height={180}
+                            alt="Profile"
+                            className="rounded-full border-2 border-background shadow-xl"
+                          />
 
           </div>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
+        <motion.div             
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          viewport={{ once: true }}
         >
           <h3 className="text-2xl font-bold mb-4">Who am I?</h3>
           <p className="text-muted-foreground mb-6">
@@ -121,10 +116,9 @@ export default function About() {
       </div>
 
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.6 }}
-        viewport={{ once: true }}
         className="mt-16"
       >
         <h3 className="text-2xl font-bold mb-6 text-center">My Skills in 3D</h3>

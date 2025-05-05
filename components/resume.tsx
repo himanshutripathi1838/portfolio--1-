@@ -186,10 +186,18 @@ export default function Resume() {
                 className="border-purple-500/20 hover:bg-purple-500/10 hover:border-purple-500/30"
                 asChild
               >
-                <Link href="/john-doe-resume.pdf" download>
-                  <Download className="h-4 w-4 mr-2" />
-                  PDF
-                </Link>
+             <a
+  href="https://drive.google.com/uc?export=download&id=1Qik9FuyeUQAzU8XaZHE-tyiduWFzM-dH"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+
+              <Download className="h-4 w-4 mr-2" />
+              PDF
+              </a>
+
+
+
               </Button>
             </div>
           </CardContent>

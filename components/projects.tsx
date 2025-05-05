@@ -21,66 +21,14 @@ const ProjectsTitleComponent = dynamic(() => import("./projects-title"), {
 })
 
 export default function Projects() {
-  const containerRef = useRef<HTMLDivElement>(null)
   const [mounted, setMounted] = useState(false)
-  const [scrollProps, setScrollProps] = useState({ opacity: 1, y: 0 })
 
   // First, just set mounted state
   useEffect(() => {
     setMounted(true)
   }, [])
 
-  // Then, in a separate effect, add event listeners only after mounting
-  useEffect(() => {
-    if (!mounted) return
-    if (typeof window === "undefined") return
-
-    const handleScroll = () => {
-      try {
-        if (!containerRef.current) return
-
-        const rect = containerRef.current.getBoundingClientRect()
-        const windowHeight = window.innerHeight
-        const offsetTop = rect.top
-        const elementHeight = rect.height
-
-        // Calculate scroll progress
-        const scrollProgress = 1 - offsetTop / (windowHeight + elementHeight)
-        const clampedProgress = Math.max(0, Math.min(1, scrollProgress))
-
-        // Transform values based on scroll progress
-        let opacity = 1
-        let y = 0
-
-        if (clampedProgress < 0.2) {
-          opacity = clampedProgress / 0.2
-          y = 100 - (clampedProgress / 0.2) * 100
-        } else if (clampedProgress > 0.8) {
-          opacity = (1 - clampedProgress) / 0.2
-          y = ((clampedProgress - 0.8) / 0.2) * -100
-        }
-
-        setScrollProps({ opacity, y })
-      } catch (error) {
-        console.error("Error in scroll handler:", error)
-      }
-    }
-
-    try {
-      window.addEventListener("scroll", handleScroll)
-      handleScroll() // Initial check
-    } catch (error) {
-      console.error("Error setting up scroll listener:", error)
-    }
-
-    return () => {
-      try {
-        window.removeEventListener("scroll", handleScroll)
-      } catch (error) {
-        console.error("Error removing scroll listener:", error)
-      }
-    }
-  }, [mounted])
+  // No scroll effect needed
 
   const projects = [
     {
@@ -104,7 +52,7 @@ export default function Projects() {
     {
       title: "Portfolio Website",
       description: "A responsive portfolio website showcasing projects and skills with a modern design.",
-      image: "/placeholder.svg?height=300&width=500",
+      image: "https://i.ibb.co/MDfMN0WR/Screenshot-2025-05-02-214511.png",
       tags: ["React", "Tailwind CSS", "Framer Motion"],
       liveUrl: "#",
       githubUrl: "#",
@@ -135,7 +83,7 @@ export default function Projects() {
   }
 
   return (
-    <div className="container mx-auto" ref={containerRef}>
+    <div className="container mx-auto">
       <div className="h-24 mb-6">
         <ProjectsTitleComponent />
       </div>
@@ -144,20 +92,11 @@ export default function Projects() {
         {projects.map((project, index) => (
           <motion.div
             key={index}
-            style={{
-              opacity: scrollProps.opacity,
-              y: scrollProps.y,
-            }}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            viewport={{ once: true }}
-            whileHover={{
-              scale: 1.03,
-              rotateY: 5,
-              z: 10,
-            }}
-            className="perspective-1000"
+            whileHover={{ scale: 1.02 }}
+            className="transform-gpu"
           >
             <Card className="overflow-hidden border border-purple-500/20 bg-background/50 backdrop-blur-sm h-full flex flex-col transform-gpu transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/10">
               <div className="relative h-48 w-full overflow-hidden">

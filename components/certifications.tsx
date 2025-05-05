@@ -31,8 +31,8 @@ export default function Certifications() {
       title: "Certified in web development course from MANIT, Bhopal (M.P.)",
       issuer: "MANIT, Bhopal (M.P.)",
       date: "May 2024",
-      image: "https://i.ibb.co/KpwS38N7/1726323496849.jpg",
-      url: "#",
+      image: "https://i.ibb.co/Y7t518JN/Whats-App-Image-2025-05-02-at-21-52-39-ee03e3f6.jpg",
+      url: "https://i.ibb.co/Y7t518JN/Whats-App-Image-2025-05-02-at-21-52-39-ee03e3f6.jpg",
     },
     // {
     //   title: "Professional Frontend Developer",
@@ -46,7 +46,7 @@ export default function Certifications() {
       issuer: "Jagran Lakecity University",
       date: "August 2025",
       image: "https://i.ibb.co/gLWgq70M/Whats-App-Image-2025-05-01-at-19-56-22-6934b523.jpg",
-      url: "#",
+      url: "https://i.ibb.co/gLWgq70M/Whats-App-Image-2025-05-01-at-19-56-22-6934b523.jpg",
     },
     // {
     //   title: "UI/UX Design Professional",

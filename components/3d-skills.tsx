@@ -9,17 +9,18 @@ import type * as THREE from "three"
 
 const skills = [
   { name: "React", color: "#61DAFB" },
-  { name: "Next.js", color: "#000000" },
-  { name: "TypeScript", color: "#3178C6" },
-  { name: "JavaScript", color: "#F7DF1E" },
-  { name: "Node.js", color: "#339933" },
+  { name: "C", color: "#000000" },
+  { name: "C++", color: "#3178C6" },
+  { name: "DSA", color: "#F7DF1E" },
+  { name: "Bootstrap", color: "#339933" },
   { name: "Tailwind", color: "#06B6D4" },
   { name: "MongoDB", color: "#47A248" },
-  { name: "PostgreSQL", color: "#4169E1" },
-  { name: "Figma", color: "#F24E1E" },
+  { name: "HTML", color: "#4169E1" },
+  { name: "CSS", color: "#F24E1E" },
+  { name: "JavaScript", color: "#F7DF1E" },
   { name: "Git", color: "#F05032" },
-  { name: "UI/UX", color: "#FF61F6" },
-  { name: "Express", color: "#000000" },
+  // { name: "UI/UX", color: "#FF61F6" },
+  // { name: "Express", color: "#000000" },
 ]
 
 function SkillSphere({
